@@ -13,7 +13,7 @@ namespace Tests
             DriveInfo[] drives = getDrives.AsDriveInfo();
             foreach (DriveInfo d in drives)
             {
-                if (drive.IsType(d,DriveType.Fixed))
+                if (drive.IsType(d, DriveType.Fixed))
                 {
                     Console.WriteLine(d.Name);
                 }
