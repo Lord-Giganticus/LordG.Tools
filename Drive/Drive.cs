@@ -42,5 +42,26 @@ namespace LordG.Tools.Drive
                 return Drives.ToArray();
             }
         }
+        /// <summary>
+        /// Checks if a drive is a certain type. 
+        /// </summary>
+        /// <param name="drive">The drive you want to check.</param>
+        /// <param name="type">The type you want to check. EX: DriveType.Fixed</param>
+        /// <returns></returns>
+        public bool IsType(DriveInfo drive, DriveType type)
+        {
+            if (drive.DriveType == type)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
+        }
+        public DriveInfo GetDriveInfo(string path)
+        {
+            DriveInfo drive = new DriveInfo(path);
+            return drive;
+        }
     }
 }
