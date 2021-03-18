@@ -79,7 +79,7 @@ namespace ShowMiiWads
             this.label3.Size = new System.Drawing.Size(200, 45);
             this.label3.TabIndex = 4;
             this.label3.Text = "For further information or if you have suggestions, found bugs or anything else, " +
-                "visit:";
+    "visit:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // linkLabel1
@@ -198,6 +198,7 @@ namespace ShowMiiWads
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbSMW);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ShowMiiWads_About";

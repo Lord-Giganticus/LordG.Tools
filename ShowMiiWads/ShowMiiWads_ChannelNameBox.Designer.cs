@@ -45,6 +45,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChannelNameDialog));
             this.txtEng = new System.Windows.Forms.TextBox();
             this.txtJap = new System.Windows.Forms.TextBox();
             this.txtDe = new System.Windows.Forms.TextBox();
@@ -271,6 +272,7 @@
             this.Controls.Add(this.txtJap);
             this.Controls.Add(this.txtEng);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ChannelNameDialog";

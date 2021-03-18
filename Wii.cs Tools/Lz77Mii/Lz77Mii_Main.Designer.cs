@@ -45,6 +45,7 @@ namespace Wii.cs_Tools
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lz77Mii_Main));
             this.tbInput = new System.Windows.Forms.TextBox();
             this.btnBrowseInput = new System.Windows.Forms.Button();
             this.rbCompress = new System.Windows.Forms.RadioButton();
@@ -192,6 +193,7 @@ namespace Wii.cs_Tools
             this.Controls.Add(this.btnBrowseInput);
             this.Controls.Add(this.tbInput);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Lz77Mii_Main";
             this.Text = "Lz77Mii - Wii.cs Tools";

@@ -46,6 +46,7 @@ namespace ShowMiiWads
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowMiiWads_Main));
             this.lvWads = new System.Windows.Forms.ListView();
             this.lvName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -201,11 +202,11 @@ namespace ShowMiiWads
             this.cmNandRestoreSaveAll = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.cmNandPackWad = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmNandPatchReturnTo = new System.Windows.Forms.ToolStripMenuItem();
             this.cmNandDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.cmNandPreview = new System.Windows.Forms.ToolStripMenuItem();
             this.lvQueue = new System.Windows.Forms.ListBox();
-            this.cmNandPatchReturnTo = new System.Windows.Forms.ToolStripMenuItem();
             this.cmWads.SuspendLayout();
             this.msMain.SuspendLayout();
             this.ssMain.SuspendLayout();
@@ -229,6 +230,7 @@ namespace ShowMiiWads
             this.lvTitle});
             this.lvWads.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvWads.FullRowSelect = true;
+            this.lvWads.HideSelection = false;
             this.lvWads.Location = new System.Drawing.Point(0, 24);
             this.lvWads.Name = "lvWads";
             this.lvWads.Size = new System.Drawing.Size(922, 345);
@@ -334,54 +336,54 @@ namespace ShowMiiWads
             this.toolStripSeparator16,
             this.cmRefreshFolder});
             this.cmWads.Name = "cmWads";
-            this.cmWads.Size = new System.Drawing.Size(189, 402);
+            this.cmWads.Size = new System.Drawing.Size(188, 402);
             this.cmWads.Opening += new System.ComponentModel.CancelEventHandler(this.cmWads_Opening);
             // 
             // cmCopy
             // 
             this.cmCopy.Name = "cmCopy";
-            this.cmCopy.Size = new System.Drawing.Size(188, 22);
+            this.cmCopy.Size = new System.Drawing.Size(187, 22);
             this.cmCopy.Text = "Copy";
             this.cmCopy.Click += new System.EventHandler(this.cmCopy_Click);
             // 
             // cmCut
             // 
             this.cmCut.Name = "cmCut";
-            this.cmCut.Size = new System.Drawing.Size(188, 22);
+            this.cmCut.Size = new System.Drawing.Size(187, 22);
             this.cmCut.Text = "Cut";
             this.cmCut.Click += new System.EventHandler(this.cmCut_Click);
             // 
             // cmPaste
             // 
             this.cmPaste.Name = "cmPaste";
-            this.cmPaste.Size = new System.Drawing.Size(188, 22);
+            this.cmPaste.Size = new System.Drawing.Size(187, 22);
             this.cmPaste.Text = "Paste";
             this.cmPaste.Click += new System.EventHandler(this.cmPaste_Click);
             // 
             // cmRename
             // 
             this.cmRename.Name = "cmRename";
-            this.cmRename.Size = new System.Drawing.Size(188, 22);
+            this.cmRename.Size = new System.Drawing.Size(187, 22);
             this.cmRename.Text = "Rename";
             this.cmRename.Click += new System.EventHandler(this.cmRename_Click);
             // 
             // cmDelete
             // 
             this.cmDelete.Name = "cmDelete";
-            this.cmDelete.Size = new System.Drawing.Size(188, 22);
+            this.cmDelete.Size = new System.Drawing.Size(187, 22);
             this.cmDelete.Text = "Delete";
             this.cmDelete.Click += new System.EventHandler(this.cmDelete_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(185, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(184, 6);
             // 
             // cmChangeTitle
             // 
             this.cmChangeTitle.Enabled = false;
             this.cmChangeTitle.Name = "cmChangeTitle";
-            this.cmChangeTitle.Size = new System.Drawing.Size(188, 22);
+            this.cmChangeTitle.Size = new System.Drawing.Size(187, 22);
             this.cmChangeTitle.Text = "Change Channel Title";
             this.cmChangeTitle.Click += new System.EventHandler(this.cmChannelName_Click);
             // 
@@ -389,7 +391,7 @@ namespace ShowMiiWads
             // 
             this.cmChangeID.Enabled = false;
             this.cmChangeID.Name = "cmChangeID";
-            this.cmChangeID.Size = new System.Drawing.Size(188, 22);
+            this.cmChangeID.Size = new System.Drawing.Size(187, 22);
             this.cmChangeID.Text = "Change Title ID";
             this.cmChangeID.Click += new System.EventHandler(this.cmChangeID_Click);
             // 
@@ -397,7 +399,7 @@ namespace ShowMiiWads
             // 
             this.cmChangeIosSlot.Enabled = false;
             this.cmChangeIosSlot.Name = "cmChangeIosSlot";
-            this.cmChangeIosSlot.Size = new System.Drawing.Size(188, 22);
+            this.cmChangeIosSlot.Size = new System.Drawing.Size(187, 22);
             this.cmChangeIosSlot.Text = "Change IOS Slot";
             this.cmChangeIosSlot.Click += new System.EventHandler(this.cmChangeIosSlot_Click);
             // 
@@ -405,7 +407,7 @@ namespace ShowMiiWads
             // 
             this.cmChangeTitleVersion.Enabled = false;
             this.cmChangeTitleVersion.Name = "cmChangeTitleVersion";
-            this.cmChangeTitleVersion.Size = new System.Drawing.Size(188, 22);
+            this.cmChangeTitleVersion.Size = new System.Drawing.Size(187, 22);
             this.cmChangeTitleVersion.Text = "Change Title Version";
             this.cmChangeTitleVersion.Click += new System.EventHandler(this.cmChangeTitleVersion_Click);
             // 
@@ -418,7 +420,7 @@ namespace ShowMiiWads
             this.cmNtscJ});
             this.cmChangeRegion.Enabled = false;
             this.cmChangeRegion.Name = "cmChangeRegion";
-            this.cmChangeRegion.Size = new System.Drawing.Size(188, 22);
+            this.cmChangeRegion.Size = new System.Drawing.Size(187, 22);
             this.cmChangeRegion.Text = "Change Region Flag";
             // 
             // cmRegionFree
@@ -453,7 +455,7 @@ namespace ShowMiiWads
             // 
             this.cmInsertDol.Enabled = false;
             this.cmInsertDol.Name = "cmInsertDol";
-            this.cmInsertDol.Size = new System.Drawing.Size(188, 22);
+            this.cmInsertDol.Size = new System.Drawing.Size(187, 22);
             this.cmInsertDol.Text = "Insert Dol";
             this.cmInsertDol.Click += new System.EventHandler(this.cmInsertDol_Click);
             // 
@@ -466,82 +468,82 @@ namespace ShowMiiWads
             this.cmExtractVcPics});
             this.cmExtract.Enabled = false;
             this.cmExtract.Name = "cmExtract";
-            this.cmExtract.Size = new System.Drawing.Size(188, 22);
+            this.cmExtract.Size = new System.Drawing.Size(187, 22);
             this.cmExtract.Text = "Extract";
             // 
             // cmToFolder
             // 
             this.cmToFolder.Name = "cmToFolder";
-            this.cmToFolder.Size = new System.Drawing.Size(125, 22);
+            this.cmToFolder.Size = new System.Drawing.Size(123, 22);
             this.cmToFolder.Text = "To Folder";
             this.cmToFolder.Click += new System.EventHandler(this.cmToFolder_Click);
             // 
             // cmToNand
             // 
             this.cmToNand.Name = "cmToNand";
-            this.cmToNand.Size = new System.Drawing.Size(125, 22);
+            this.cmToNand.Size = new System.Drawing.Size(123, 22);
             this.cmToNand.Text = "To NAND";
             this.cmToNand.Click += new System.EventHandler(this.cmToNAND_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(122, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(120, 6);
             // 
             // cmExtractVcPics
             // 
             this.cmExtractVcPics.Name = "cmExtractVcPics";
-            this.cmExtractVcPics.Size = new System.Drawing.Size(125, 22);
+            this.cmExtractVcPics.Size = new System.Drawing.Size(123, 22);
             this.cmExtractVcPics.Text = "VC Pics";
             this.cmExtractVcPics.Click += new System.EventHandler(this.cmExtractVcPics_Click);
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(185, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(184, 6);
             // 
             // cmPreview
             // 
             this.cmPreview.Name = "cmPreview";
-            this.cmPreview.Size = new System.Drawing.Size(188, 22);
+            this.cmPreview.Size = new System.Drawing.Size(187, 22);
             this.cmPreview.Text = "Preview";
             this.cmPreview.Click += new System.EventHandler(this.cmPreview_Click);
             // 
             // cmRestore
             // 
             this.cmRestore.Name = "cmRestore";
-            this.cmRestore.Size = new System.Drawing.Size(188, 22);
+            this.cmRestore.Size = new System.Drawing.Size(187, 22);
             this.cmRestore.Text = "Restore Backup";
             this.cmRestore.Click += new System.EventHandler(this.cmRestore_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(185, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(184, 6);
             // 
             // cmRemoveFolder
             // 
             this.cmRemoveFolder.Name = "cmRemoveFolder";
-            this.cmRemoveFolder.Size = new System.Drawing.Size(188, 22);
+            this.cmRemoveFolder.Size = new System.Drawing.Size(187, 22);
             this.cmRemoveFolder.Text = "Remove This Folder";
             this.cmRemoveFolder.Click += new System.EventHandler(this.cmRemoveFolder_Click);
             // 
             // cmRemoveAllFolders
             // 
             this.cmRemoveAllFolders.Name = "cmRemoveAllFolders";
-            this.cmRemoveAllFolders.Size = new System.Drawing.Size(188, 22);
+            this.cmRemoveAllFolders.Size = new System.Drawing.Size(187, 22);
             this.cmRemoveAllFolders.Text = "Remove All Folders";
             this.cmRemoveAllFolders.Click += new System.EventHandler(this.cmRemoveAllFolders_Click);
             // 
             // toolStripSeparator16
             // 
             this.toolStripSeparator16.Name = "toolStripSeparator16";
-            this.toolStripSeparator16.Size = new System.Drawing.Size(185, 6);
+            this.toolStripSeparator16.Size = new System.Drawing.Size(184, 6);
             // 
             // cmRefreshFolder
             // 
             this.cmRefreshFolder.Name = "cmRefreshFolder";
-            this.cmRefreshFolder.Size = new System.Drawing.Size(188, 22);
+            this.cmRefreshFolder.Size = new System.Drawing.Size(187, 22);
             this.cmRefreshFolder.Text = "Refresh This Folder";
             this.cmRefreshFolder.Click += new System.EventHandler(this.cmRefreshFolder_Click);
             // 
@@ -579,7 +581,7 @@ namespace ShowMiiWads
             // 
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.btnOpen.Size = new System.Drawing.Size(182, 22);
+            this.btnOpen.Size = new System.Drawing.Size(183, 22);
             this.btnOpen.Text = "Open Folder";
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
@@ -587,7 +589,7 @@ namespace ShowMiiWads
             // 
             this.btnExport.Name = "btnExport";
             this.btnExport.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.btnExport.Size = new System.Drawing.Size(182, 22);
+            this.btnExport.Size = new System.Drawing.Size(183, 22);
             this.btnExport.Text = "Export to File";
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
@@ -595,30 +597,30 @@ namespace ShowMiiWads
             // 
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.btnRefresh.Size = new System.Drawing.Size(182, 22);
+            this.btnRefresh.Size = new System.Drawing.Size(183, 22);
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(179, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(180, 6);
             // 
             // tsMru
             // 
             this.tsMru.Name = "tsMru";
-            this.tsMru.Size = new System.Drawing.Size(182, 22);
+            this.tsMru.Size = new System.Drawing.Size(183, 22);
             this.tsMru.Text = "Most Recently Used";
             // 
             // mruSeparator
             // 
             this.mruSeparator.Name = "mruSeparator";
-            this.mruSeparator.Size = new System.Drawing.Size(179, 6);
+            this.mruSeparator.Size = new System.Drawing.Size(180, 6);
             // 
             // btnExit
             // 
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(182, 22);
+            this.btnExit.Size = new System.Drawing.Size(183, 22);
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -650,7 +652,7 @@ namespace ShowMiiWads
             // 
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.btnCopy.Size = new System.Drawing.Size(188, 22);
+            this.btnCopy.Size = new System.Drawing.Size(187, 22);
             this.btnCopy.Text = "Copy";
             this.btnCopy.Click += new System.EventHandler(this.cmCopy_Click);
             // 
@@ -658,7 +660,7 @@ namespace ShowMiiWads
             // 
             this.btnCut.Name = "btnCut";
             this.btnCut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.btnCut.Size = new System.Drawing.Size(188, 22);
+            this.btnCut.Size = new System.Drawing.Size(187, 22);
             this.btnCut.Text = "Cut";
             this.btnCut.Click += new System.EventHandler(this.cmCut_Click);
             // 
@@ -666,7 +668,7 @@ namespace ShowMiiWads
             // 
             this.btnPaste.Name = "btnPaste";
             this.btnPaste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.btnPaste.Size = new System.Drawing.Size(188, 22);
+            this.btnPaste.Size = new System.Drawing.Size(187, 22);
             this.btnPaste.Text = "Paste";
             this.btnPaste.Click += new System.EventHandler(this.cmPaste_Click);
             // 
@@ -674,7 +676,7 @@ namespace ShowMiiWads
             // 
             this.btnRename.Name = "btnRename";
             this.btnRename.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.btnRename.Size = new System.Drawing.Size(188, 22);
+            this.btnRename.Size = new System.Drawing.Size(187, 22);
             this.btnRename.Text = "Rename";
             this.btnRename.Click += new System.EventHandler(this.cmRename_Click);
             // 
@@ -682,20 +684,20 @@ namespace ShowMiiWads
             // 
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.btnDelete.Size = new System.Drawing.Size(188, 22);
+            this.btnDelete.Size = new System.Drawing.Size(187, 22);
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.cmDelete_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(185, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(184, 6);
             // 
             // btnChangeTitle
             // 
             this.btnChangeTitle.Enabled = false;
             this.btnChangeTitle.Name = "btnChangeTitle";
-            this.btnChangeTitle.Size = new System.Drawing.Size(188, 22);
+            this.btnChangeTitle.Size = new System.Drawing.Size(187, 22);
             this.btnChangeTitle.Text = "Change Channel Title";
             this.btnChangeTitle.Click += new System.EventHandler(this.cmChannelName_Click);
             // 
@@ -703,7 +705,7 @@ namespace ShowMiiWads
             // 
             this.btnChangeID.Enabled = false;
             this.btnChangeID.Name = "btnChangeID";
-            this.btnChangeID.Size = new System.Drawing.Size(188, 22);
+            this.btnChangeID.Size = new System.Drawing.Size(187, 22);
             this.btnChangeID.Text = "Change Title ID";
             this.btnChangeID.Click += new System.EventHandler(this.cmChangeID_Click);
             // 
@@ -711,7 +713,7 @@ namespace ShowMiiWads
             // 
             this.btnChangeIosSlot.Enabled = false;
             this.btnChangeIosSlot.Name = "btnChangeIosSlot";
-            this.btnChangeIosSlot.Size = new System.Drawing.Size(188, 22);
+            this.btnChangeIosSlot.Size = new System.Drawing.Size(187, 22);
             this.btnChangeIosSlot.Text = "Change IOS Slot";
             this.btnChangeIosSlot.Click += new System.EventHandler(this.cmChangeIosSlot_Click);
             // 
@@ -719,7 +721,7 @@ namespace ShowMiiWads
             // 
             this.btnChangeTitleVersion.Enabled = false;
             this.btnChangeTitleVersion.Name = "btnChangeTitleVersion";
-            this.btnChangeTitleVersion.Size = new System.Drawing.Size(188, 22);
+            this.btnChangeTitleVersion.Size = new System.Drawing.Size(187, 22);
             this.btnChangeTitleVersion.Text = "Change Title Version";
             this.btnChangeTitleVersion.Click += new System.EventHandler(this.cmChangeTitleVersion_Click);
             // 
@@ -732,7 +734,7 @@ namespace ShowMiiWads
             this.btnNtscJ});
             this.tsChangeRegion.Enabled = false;
             this.tsChangeRegion.Name = "tsChangeRegion";
-            this.tsChangeRegion.Size = new System.Drawing.Size(188, 22);
+            this.tsChangeRegion.Size = new System.Drawing.Size(187, 22);
             this.tsChangeRegion.Text = "Change Region Flag";
             // 
             // btnRegionFree
@@ -767,7 +769,7 @@ namespace ShowMiiWads
             // 
             this.btnInsertDol.Enabled = false;
             this.btnInsertDol.Name = "btnInsertDol";
-            this.btnInsertDol.Size = new System.Drawing.Size(188, 22);
+            this.btnInsertDol.Size = new System.Drawing.Size(187, 22);
             this.btnInsertDol.Text = "Insert Dol";
             this.btnInsertDol.Click += new System.EventHandler(this.cmInsertDol_Click);
             // 
@@ -778,39 +780,39 @@ namespace ShowMiiWads
             this.btnToNand});
             this.tsExtract.Enabled = false;
             this.tsExtract.Name = "tsExtract";
-            this.tsExtract.Size = new System.Drawing.Size(188, 22);
+            this.tsExtract.Size = new System.Drawing.Size(187, 22);
             this.tsExtract.Text = "Extract";
             // 
             // btnToFolder
             // 
             this.btnToFolder.Name = "btnToFolder";
-            this.btnToFolder.Size = new System.Drawing.Size(125, 22);
+            this.btnToFolder.Size = new System.Drawing.Size(123, 22);
             this.btnToFolder.Text = "To Folder";
             this.btnToFolder.Click += new System.EventHandler(this.cmToFolder_Click);
             // 
             // btnToNand
             // 
             this.btnToNand.Name = "btnToNand";
-            this.btnToNand.Size = new System.Drawing.Size(125, 22);
+            this.btnToNand.Size = new System.Drawing.Size(123, 22);
             this.btnToNand.Text = "To NAND";
             this.btnToNand.Click += new System.EventHandler(this.cmToNAND_Click);
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(185, 6);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(184, 6);
             // 
             // btnPreview
             // 
             this.btnPreview.Name = "btnPreview";
-            this.btnPreview.Size = new System.Drawing.Size(188, 22);
+            this.btnPreview.Size = new System.Drawing.Size(187, 22);
             this.btnPreview.Text = "Preview";
             this.btnPreview.Click += new System.EventHandler(this.cmPreview_Click);
             // 
             // btnRestore
             // 
             this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(188, 22);
+            this.btnRestore.Size = new System.Drawing.Size(187, 22);
             this.btnRestore.Text = "Restore Backup";
             this.btnRestore.Click += new System.EventHandler(this.cmRestore_Click);
             // 
@@ -1032,7 +1034,7 @@ namespace ShowMiiWads
             this.btnExtractBootmiiDump,
             this.btnCreateKey});
             this.tsTools.Name = "tsTools";
-            this.tsTools.Size = new System.Drawing.Size(48, 20);
+            this.tsTools.Size = new System.Drawing.Size(46, 20);
             this.tsTools.Text = "Tools";
             // 
             // btnPackWad
@@ -1321,6 +1323,7 @@ namespace ShowMiiWads
             this.lvNandTitle});
             this.lvNand.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvNand.FullRowSelect = true;
+            this.lvNand.HideSelection = false;
             this.lvNand.Location = new System.Drawing.Point(0, 24);
             this.lvNand.Name = "lvNand";
             this.lvNand.ShowGroups = false;
@@ -1415,7 +1418,7 @@ namespace ShowMiiWads
             this.toolStripSeparator13,
             this.cmNandPreview});
             this.cmNand.Name = "cmNand";
-            this.cmNand.Size = new System.Drawing.Size(160, 170);
+            this.cmNand.Size = new System.Drawing.Size(158, 148);
             // 
             // cmInstall
             // 
@@ -1423,7 +1426,7 @@ namespace ShowMiiWads
             this.cmInstallWad,
             this.cmInstallFolder});
             this.cmInstall.Name = "cmInstall";
-            this.cmInstall.Size = new System.Drawing.Size(159, 22);
+            this.cmInstall.Size = new System.Drawing.Size(157, 22);
             this.cmInstall.Text = "Install";
             // 
             // cmInstallWad
@@ -1448,7 +1451,7 @@ namespace ShowMiiWads
             this.cmNandBackupSaveAll,
             this.cmNandRestoreSaveAll});
             this.tsNandSaveData.Name = "tsNandSaveData";
-            this.tsNandSaveData.Size = new System.Drawing.Size(159, 22);
+            this.tsNandSaveData.Size = new System.Drawing.Size(157, 22);
             this.tsNandSaveData.Text = "Savedata";
             // 
             // cmNandBackupSave
@@ -1482,31 +1485,39 @@ namespace ShowMiiWads
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(156, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(154, 6);
             // 
             // cmNandPackWad
             // 
             this.cmNandPackWad.Name = "cmNandPackWad";
-            this.cmNandPackWad.Size = new System.Drawing.Size(159, 22);
+            this.cmNandPackWad.Size = new System.Drawing.Size(157, 22);
             this.cmNandPackWad.Text = "Pack To Wad";
             this.cmNandPackWad.Click += new System.EventHandler(this.btnPackToWad_Click);
+            // 
+            // cmNandPatchReturnTo
+            // 
+            this.cmNandPatchReturnTo.Name = "cmNandPatchReturnTo";
+            this.cmNandPatchReturnTo.Size = new System.Drawing.Size(157, 22);
+            this.cmNandPatchReturnTo.Text = "Patch Return To";
+            this.cmNandPatchReturnTo.Visible = false;
+            this.cmNandPatchReturnTo.Click += new System.EventHandler(this.cmNandPatchReturnTo_Click);
             // 
             // cmNandDelete
             // 
             this.cmNandDelete.Name = "cmNandDelete";
-            this.cmNandDelete.Size = new System.Drawing.Size(159, 22);
+            this.cmNandDelete.Size = new System.Drawing.Size(157, 22);
             this.cmNandDelete.Text = "Delete";
             this.cmNandDelete.Click += new System.EventHandler(this.cmDelete_Click);
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(156, 6);
+            this.toolStripSeparator13.Size = new System.Drawing.Size(154, 6);
             // 
             // cmNandPreview
             // 
             this.cmNandPreview.Name = "cmNandPreview";
-            this.cmNandPreview.Size = new System.Drawing.Size(159, 22);
+            this.cmNandPreview.Size = new System.Drawing.Size(157, 22);
             this.cmNandPreview.Text = "Preview";
             this.cmNandPreview.Click += new System.EventHandler(this.cmPreview_Click);
             // 
@@ -1519,14 +1530,6 @@ namespace ShowMiiWads
             this.lvQueue.TabIndex = 5;
             this.lvQueue.Visible = false;
             // 
-            // cmNandPatchReturnTo
-            // 
-            this.cmNandPatchReturnTo.Name = "cmNandPatchReturnTo";
-            this.cmNandPatchReturnTo.Size = new System.Drawing.Size(159, 22);
-            this.cmNandPatchReturnTo.Text = "Patch Return To";
-            this.cmNandPatchReturnTo.Visible = false;
-            this.cmNandPatchReturnTo.Click += new System.EventHandler(this.cmNandPatchReturnTo_Click);
-            // 
             // ShowMiiWads_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1537,6 +1540,7 @@ namespace ShowMiiWads
             this.Controls.Add(this.ssMain);
             this.Controls.Add(this.lvWads);
             this.Controls.Add(this.msMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msMain;
             this.MinimumSize = new System.Drawing.Size(930, 396);
             this.Name = "ShowMiiWads_Main";

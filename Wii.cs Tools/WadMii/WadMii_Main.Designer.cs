@@ -45,6 +45,7 @@ namespace Wii.cs_Tools
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WadMii_Main));
             this.cbTrucha = new System.Windows.Forms.CheckBox();
             this.cbChangeID = new System.Windows.Forms.CheckBox();
             this.tbID = new System.Windows.Forms.TextBox();
@@ -215,6 +216,7 @@ namespace Wii.cs_Tools
             this.Controls.Add(this.cbChangeID);
             this.Controls.Add(this.cbTrucha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "WadMii_Main";
             this.Text = "WadMii - Wii.cs Tools";

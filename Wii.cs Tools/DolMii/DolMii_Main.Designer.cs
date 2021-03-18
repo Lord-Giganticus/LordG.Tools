@@ -45,6 +45,7 @@ namespace Wii.cs_Tools
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DolMii_Main));
             this.tbWad = new System.Windows.Forms.TextBox();
             this.btnBrowseWad = new System.Windows.Forms.Button();
             this.lbImage = new System.Windows.Forms.Label();
@@ -163,6 +164,7 @@ namespace Wii.cs_Tools
             this.Controls.Add(this.btnBrowseWad);
             this.Controls.Add(this.tbWad);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "DolMii_Main";
             this.Text = "DolMii - Wii.cs Tools";

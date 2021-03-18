@@ -309,38 +309,38 @@ namespace UltimateU8
             this.cmOpenFile,
             this.cmPreview});
             this.cmFile.Name = "cmFile";
-            this.cmFile.Size = new System.Drawing.Size(131, 120);
+            this.cmFile.Size = new System.Drawing.Size(132, 120);
             // 
             // cmFileRename
             // 
             this.cmFileRename.Name = "cmFileRename";
-            this.cmFileRename.Size = new System.Drawing.Size(130, 22);
+            this.cmFileRename.Size = new System.Drawing.Size(131, 22);
             this.cmFileRename.Text = "Rename";
             this.cmFileRename.Click += new System.EventHandler(this.cmFileRename_Click);
             // 
             // cmFileDelete
             // 
             this.cmFileDelete.Name = "cmFileDelete";
-            this.cmFileDelete.Size = new System.Drawing.Size(130, 22);
+            this.cmFileDelete.Size = new System.Drawing.Size(131, 22);
             this.cmFileDelete.Text = "Delete";
             this.cmFileDelete.Click += new System.EventHandler(this.cmFileDelete_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(127, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(128, 6);
             // 
             // cmFileExtract
             // 
             this.cmFileExtract.Name = "cmFileExtract";
-            this.cmFileExtract.Size = new System.Drawing.Size(130, 22);
+            this.cmFileExtract.Size = new System.Drawing.Size(131, 22);
             this.cmFileExtract.Text = "Extract File";
             this.cmFileExtract.Click += new System.EventHandler(this.cmFileExtract_Click);
             // 
             // cmOpenFile
             // 
             this.cmOpenFile.Name = "cmOpenFile";
-            this.cmOpenFile.Size = new System.Drawing.Size(130, 22);
+            this.cmOpenFile.Size = new System.Drawing.Size(131, 22);
             this.cmOpenFile.Text = "Open File";
             this.cmOpenFile.Visible = false;
             this.cmOpenFile.Click += new System.EventHandler(this.cmOpenFile_Click);
@@ -348,7 +348,7 @@ namespace UltimateU8
             // cmPreview
             // 
             this.cmPreview.Name = "cmPreview";
-            this.cmPreview.Size = new System.Drawing.Size(130, 22);
+            this.cmPreview.Size = new System.Drawing.Size(131, 22);
             this.cmPreview.Text = "Preview";
             this.cmPreview.Visible = false;
             this.cmPreview.Click += new System.EventHandler(this.cmPreview_Click);
@@ -361,11 +361,12 @@ namespace UltimateU8
             this.ClientSize = new System.Drawing.Size(548, 470);
             this.Controls.Add(this.tvU8);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(564, 508);
             this.Name = "UltimateU8_Main";
             this.Text = "UltimateU8 - Wii.cs Tools";
-            this.Load += new System.EventHandler(this.UltimateU8_Main_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UltimateU8_Main_FormClosing);
+            this.Load += new System.EventHandler(this.UltimateU8_Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

@@ -45,6 +45,7 @@ namespace Wii.cs_Tools
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(U8Mii_Main));
             this.cbCompress = new System.Windows.Forms.CheckBox();
             this.cbHeader = new System.Windows.Forms.CheckBox();
             this.tbFolder = new System.Windows.Forms.TextBox();
@@ -197,8 +198,8 @@ namespace Wii.cs_Tools
             this.cmbHeader.Name = "cmbHeader";
             this.cmbHeader.Size = new System.Drawing.Size(139, 21);
             this.cmbHeader.TabIndex = 14;
-            this.cmbHeader.EnabledChanged += new System.EventHandler(this.cmbHeader_EnabledChanged);
             this.cmbHeader.SelectedIndexChanged += new System.EventHandler(this.cmbHeader_SelectedIndexChanged);
+            this.cmbHeader.EnabledChanged += new System.EventHandler(this.cmbHeader_EnabledChanged);
             // 
             // U8Mii_Main
             // 
@@ -221,6 +222,7 @@ namespace Wii.cs_Tools
             this.Controls.Add(this.cbHeader);
             this.Controls.Add(this.cbCompress);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "U8Mii_Main";
             this.Text = "U8Mii - Wii.cs Tools";

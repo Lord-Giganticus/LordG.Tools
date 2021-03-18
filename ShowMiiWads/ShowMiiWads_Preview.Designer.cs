@@ -46,6 +46,7 @@ namespace ShowMiiWads
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowMiiWads_Preview));
             this.Panel = new System.Windows.Forms.Panel();
             this.cbLz77 = new System.Windows.Forms.CheckBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -330,13 +331,14 @@ namespace ShowMiiWads
             this.Controls.Add(this.pbPic);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Panel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(833, 500);
             this.Name = "ShowMiiWads_Preview";
             this.Text = "Preview";
-            this.Load += new System.EventHandler(this.Preview_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Preview_FormClosing);
+            this.Load += new System.EventHandler(this.Preview_Load);
             this.Panel.ResumeLayout(false);
             this.Panel.PerformLayout();
             this.cmPic.ResumeLayout(false);

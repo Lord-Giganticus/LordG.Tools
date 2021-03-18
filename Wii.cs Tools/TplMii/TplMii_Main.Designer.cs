@@ -45,6 +45,7 @@ namespace Wii.cs_Tools
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TplMii_Main));
             this.tbImage = new System.Windows.Forms.TextBox();
             this.btnBrowseImage = new System.Windows.Forms.Button();
             this.rbToTpl = new System.Windows.Forms.RadioButton();
@@ -220,6 +221,7 @@ namespace Wii.cs_Tools
             this.Controls.Add(this.btnBrowseImage);
             this.Controls.Add(this.tbImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "TplMii_Main";
             this.Text = "TplMii - Wii.cs Tools";
