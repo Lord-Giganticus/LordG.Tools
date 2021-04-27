@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Extensions.cs
+namespace LordG.Tools.Extensions
 {
     public static class StringExt
     {
