@@ -1,6 +1,6 @@
 ﻿using System.IO;
 using System.Collections.Generic;
-
+using System;
 
 namespace LordG.Tools.Drive
 {
@@ -29,7 +29,7 @@ namespace LordG.Tools.Drive
             /// Gets all drives that have a valid path.
             /// </summary>
             /// <returns>A DriveInfo array of all drives that have a valid path.</returns>
-            public DriveInfo[] AsDriveInfo()
+            public static DriveInfo[] AsDriveInfo()
             {
                 List<DriveInfo> Drives = new List<DriveInfo>();
                 DriveInfo[] drives = DriveInfo.GetDrives();
@@ -41,27 +41,76 @@ namespace LordG.Tools.Drive
                 }
                 return Drives.ToArray();
             }
+
+            public static DirectoryInfo[] AsDirectoryInfo()
+            {
+                var list = new List<DirectoryInfo>();
+                foreach (var d in DriveInfo.GetDrives())
+                    list.Add(d.RootDirectory);
+                return list.ToArray();
+            }
+
+            public static Tuple<DriveInfo, DriveType>[] AsTuples()
+            {
+                var l = new List<Tuple<DriveInfo, DriveType>>();
+                foreach (var d in DriveInfo.GetDrives())
+                    l.Add(Tuple.Create(d, d.DriveType));
+                return l.ToArray();
+            }
+
+            public static DriveType[] AsDriveType()
+            {
+                var l = new List<DriveType>();
+                foreach (var d in DriveInfo.GetDrives())
+                    l.Add(d.DriveType);
+                return l.ToArray();
+            }
         }
+        /// <summary>
+        /// Waits for a certian <see cref="DriveType"/> to be present in <see cref="GetDrives.AsDriveType"/>
+        /// </summary>
+        /// <param name="type">The type to check for</param>
+        /// <returns>The <see cref="DirectoryInfo"/> of the drive that has the <see cref="DriveType"/> specified.</returns>
+        public static DirectoryInfo WaitForCertianDriveType(DriveType type)
+        {
+            int index = -1;
+            while (!GetDrives.AsDriveType().ToList().Contains(type))
+                if (!GetDrives.AsDriveType().ToList().Contains(type))
+                    continue;
+                else
+                {
+                    index = GetDrives.AsDriveType().ToList().IndexOf(type);
+                    break;
+                }
+            return GetDrives.AsDirectoryInfo()[index];
+        }
+    }
+
+    public static class DriveExt
+    {
         /// <summary>
         /// Checks if a drive is a certain type. 
         /// </summary>
         /// <param name="drive">The drive you want to check.</param>
-        /// <param name="type">The type you want to check. EX: DriveType.Fixed</param>
+        /// <param name="type">The type you want to check. EX: <see cref="DriveType.Fixed"/></param>
         /// <returns></returns>
-        public bool IsType(DriveInfo drive, DriveType type)
+        public static bool IsType(this DriveInfo drive, DriveType type)
         {
-            if (drive.DriveType == type)
-            {
-                return true;
-            } else
-            {
-                return false;
-            }
+            return drive.DriveType == type;
         }
-        public DriveInfo GetDriveInfo(string path)
+
+        /// <summary>
+        /// Converts a <typeparamref name="T"/>[] object to a List.
+        /// </summary>
+        /// <typeparam name="T">The object type.</typeparam>
+        /// <param name="ts">The object to use.</param>
+        /// <returns>A new <see cref="List{T}"/> object.</returns>
+        public static List<T> ToList<T>(this T[] ts)
         {
-            DriveInfo drive = new DriveInfo(path);
-            return drive;
+            var l = new List<T>();
+            foreach (var t in ts)
+                l.Add(t);
+            return l;
         }
     }
 }

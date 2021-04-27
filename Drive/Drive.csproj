@@ -5,6 +5,8 @@
   </PropertyGroup>
 	<PropertyGroup>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<RootNamespace>LordG.Tools.Drive</RootNamespace>
+		<AssemblyName>LordG.Tools.Drive</AssemblyName>
 	</PropertyGroup>
 
 </Project>

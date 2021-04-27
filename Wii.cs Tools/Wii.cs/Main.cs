@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Wii.cs_Tools;
+using ShowMiiWads;
+using UltimateU8;
 
 namespace Wii.cs
 {
@@ -19,43 +22,43 @@ namespace Wii.cs
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cs_Tools.DolMii_Main dolMii_Main = new cs_Tools.DolMii_Main();
+            DolMii_Main dolMii_Main = new DolMii_Main();
             dolMii_Main.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            cs_Tools.Lz77Mii_Main lz77Mii_Main = new cs_Tools.Lz77Mii_Main();
+            Lz77Mii_Main lz77Mii_Main = new Lz77Mii_Main();
             lz77Mii_Main.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ShowMiiWads.ShowMiiWads_Main showMiiWads_Main = new ShowMiiWads.ShowMiiWads_Main();
+            ShowMiiWads_Main showMiiWads_Main = new ShowMiiWads_Main();
             showMiiWads_Main.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            cs_Tools.TplMii_Main tplMii_Main = new cs_Tools.TplMii_Main();
+            TplMii_Main tplMii_Main = new TplMii_Main();
             tplMii_Main.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            cs_Tools.U8Mii_Main u8Mii_Main = new cs_Tools.U8Mii_Main();
+            U8Mii_Main u8Mii_Main = new U8Mii_Main();
             u8Mii_Main.ShowDialog();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            UltimateU8.UltimateU8_Main ultimateU8_Main = new UltimateU8.UltimateU8_Main();
+            UltimateU8_Main ultimateU8_Main = new UltimateU8_Main();
             ultimateU8_Main.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            cs_Tools.WadMii_Main wadMii_Main = new cs_Tools.WadMii_Main();
+            WadMii_Main wadMii_Main = new WadMii_Main();
             wadMii_Main.ShowDialog();
         }
     }
