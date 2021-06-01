@@ -70,6 +70,11 @@ namespace LordG.Tools.Extensions
             return sbyte.Parse(String);
         }
 
+        public static DateTime ToDateTime(this string String)
+        {
+            return DateTime.Parse(String);
+        }
+
         public static List<string> ToList(this string String)
         {
             return new List<string>
