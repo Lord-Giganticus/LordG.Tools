@@ -75,6 +75,8 @@ namespace LordG.Tools.Extensions
             return DateTime.Parse(String);
         }
 
+        public static DateTimeOffset ToDateTimeOffset(this string String) => DateTimeOffset.Parse(String);
+
         public static List<string> ToList(this string String)
         {
             return new List<string>
@@ -86,6 +88,33 @@ namespace LordG.Tools.Extensions
         public static void AddToList(this string String, ref List<string> List)
         {
             List.Add(String);
+        }
+
+        public static int GetCountOfChar(this string haystack, char needle)
+        {
+            int r = 0;
+            foreach (var s in haystack)
+                if (s == needle)
+                    r++;
+            return r;
+        }
+
+        public static int[] GetIndexesOfChar(this string haystack, char needle)
+        {
+            var r = new List<int>();
+            for (int i = 0; i == haystack.Length; i++)
+                if (haystack[i].Equals(needle))
+                    r.Add(i);
+            return r.ToArray();
+        }
+
+        public static string RemoveIntancesOfChar(this string haystack, char needle)
+        {
+            var list = new List<string>();
+            foreach (var s in haystack)
+                if (!s.Equals(needle))
+                    list.Add(s.ToString());
+            return string.Join("", list.ToArray());
         }
     }
 }
