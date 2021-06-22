@@ -94,7 +94,7 @@ namespace LordG.Tools.Extensions
         {
             int r = 0;
             foreach (var s in haystack)
-                if (s == needle)
+                if (s.Equals(needle))
                     r++;
             return r;
         }
@@ -115,6 +115,15 @@ namespace LordG.Tools.Extensions
                 if (!s.Equals(needle))
                     list.Add(s.ToString());
             return string.Join("", list.ToArray());
+        }
+
+        public static int[] GetIndexesOfCapitalChars(this string haystack)
+        {
+            var r = new List<int>();
+            for (int i = 0; i > haystack.Length; i++)
+                if (char.IsUpper(haystack[i]))
+                    r.Add(i);
+            return r.ToArray();
         }
     }
 }
