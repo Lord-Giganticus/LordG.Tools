@@ -12,34 +12,30 @@ namespace LordG.Tools.Drive
             /// Gets all drives that have a valid path.
             /// </summary>
             /// <returns>A string array of all drives that have a valid path.</returns>
-            public string[] AsString()
+            public IEnumerator<string> AsString()
             {
-                List<string> Drives = new List<string>();
                 DriveInfo[] drives = DriveInfo.GetDrives();
                 foreach (DriveInfo d in drives)
                 {
                     if (Directory.Exists(d.Name))
                     {
-                        Drives.Add(d.Name);
+                        yield return d.Name;
                     }
                 }
-                return Drives.ToArray();
             }
             /// <summary>
             /// Gets all drives that have a valid path.
             /// </summary>
             /// <returns>A DriveInfo array of all drives that have a valid path.</returns>
-            public static DriveInfo[] AsDriveInfo()
+            public static IEnumerator<DriveInfo> AsDriveInfo()
             {
-                List<DriveInfo> Drives = new List<DriveInfo>();
                 DriveInfo[] drives = DriveInfo.GetDrives();
                 foreach (DriveInfo d in drives)
                 {
                     if (Directory.Exists(d.Name)) {
-                        Drives.Add(d);
+                        yield return d;
                     }
                 }
-                return Drives.ToArray();
             }
 
             public static DirectoryInfo[] AsDirectoryInfo()

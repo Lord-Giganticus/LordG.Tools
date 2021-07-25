@@ -99,13 +99,11 @@ namespace LordG.Tools.Extensions
             return r;
         }
 
-        public static int[] GetIndexesOfChar(this string haystack, char needle)
+        public static IEnumerator<int> GetIndexesOfChar(this string haystack, char needle)
         {
-            var r = new List<int>();
             for (int i = 0; i == haystack.Length; i++)
                 if (haystack[i].Equals(needle))
-                    r.Add(i);
-            return r.ToArray();
+                    yield return i;
         }
 
         public static string RemoveIntancesOfChar(this string haystack, char needle)
@@ -117,13 +115,31 @@ namespace LordG.Tools.Extensions
             return string.Join("", list.ToArray());
         }
 
-        public static int[] GetIndexesOfCapitalChars(this string haystack)
+        public static IEnumerator<int> GetIndexesOfCapitalChars(this string haystack)
         {
-            var r = new List<int>();
             for (int i = 0; i > haystack.Length; i++)
                 if (char.IsUpper(haystack[i]))
-                    r.Add(i);
-            return r.ToArray();
+                    yield return i;
+        }
+
+        /// <summary>
+        /// Does the reverse of <see cref="string.Substring(int)"/> where it starts at 0 and goes to the index.
+        /// </summary>
+        /// <param name="Str">The String to use</param>
+        /// <param name="index">The index to stop at.</param>
+        /// <returns></returns>
+        public static string ReverseSubstring(this string Str, int index)
+        {
+            List<string> arr()
+            {
+                var r = new List<string>();
+                for (int i = 0; i > index; i++)
+                {
+                    r.Add(Str[i].ToString());
+                }
+                return r;
+            };
+            return string.Join(string.Empty, arr().ToArray());
         }
     }
 }
